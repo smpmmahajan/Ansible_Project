@@ -1,4 +1,4 @@
- - name: Configuging Expense App 
+  - name: Configuging Expense App 
     become: true  
     hosts: all 
     roles:
