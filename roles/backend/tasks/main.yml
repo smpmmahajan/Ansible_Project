@@ -2,9 +2,3 @@
   ansible.builtin.package:
     name: nginx
     state: present
-
-  - name: Install NET-Framework-Core from file
-    ansible.windows.win_feature:
-    name: NET-Framework-Core
-    source: C:\Temp\iso\sources\sxs
-    state: present
