@@ -1,0 +1,9 @@
+- name: Install nginx
+  ansible.builtin.package:
+    name: nginx
+    state: present
+  
+  - name: Install .NET 8.0 SDK
+      yum:
+        name: dotnet-sdk-8.0
+        state: present
