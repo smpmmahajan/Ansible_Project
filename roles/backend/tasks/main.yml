@@ -2,8 +2,20 @@
   ansible.builtin.package:
     name: nginx
     state: present
-    
+
 - name: Install NET-Framework-Core from yum
   ansible.builtin.yum:
       name: dotnet-sdk-8.0      
       state: present
+
+- name: Copy climate config file
+  ansible.builtin.copy:
+    src: climate.conf
+    dest: /etc/nginx/conf.d/climate.conf
+
+- name: Restarting {{COMPONENT}}
+  ansible.builtin.systemd_service:
+    name: nginx 
+    state: restarted
+    enabled: true
+    daemon_reload: true
