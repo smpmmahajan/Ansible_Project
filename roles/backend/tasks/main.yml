@@ -2,3 +2,8 @@
   ansible.builtin.package:
     name: nginx
     state: present
+
+  - name: Install NET-Framework-Core from yum
+    ansible.builtin.yum:
+      name: dotnet-sdk-8.0      
+      state: present
